@@ -165,9 +165,10 @@ if(articulosCarrito.some(i=>i.id === cursoID)){
        // console.log(cursos)
 
         }
-        SincronizarLS()
+    
         mostrarCarritoHTML()
     }//fin if clase borrar curso
+    SincronizarLS()
 }//fin funcion
 /*
 

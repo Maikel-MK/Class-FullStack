@@ -72,6 +72,3 @@ function crearCliente(){
 }
 
 
-
-//Nota:
- //   El key path me aparece como crmd y no como null

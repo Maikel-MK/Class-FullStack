@@ -25,7 +25,6 @@ localStorage.setItem('Producto',productoString)
 
 //Ejem: que pasaria si agrego un arreglo
 //NOTA
-//No me lee los arreglos en el console.log
 
 const Meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio']
 console.log(Meses)
