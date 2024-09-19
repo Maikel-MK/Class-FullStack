@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buscador De Libros </title>
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">  
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+    <h1>Buscador de Libros</h1>
+
+    <div class="contenedor">
+
+        
+
+        <form id="buscador">
+            <div class="row">
+                <div class="three columns">
+                    <label for="Estado">Estado</label>
+                    <select class="u-full-width" id="Estado">
+                        <option value="">Seleccione</option>
+                        <option value="Nuevo">Nuevo</option>
+                        <option value="Usado">Usado</option>
+                    </select>
+                </div>
+                <div class="three columns">
+                    <label for="minimo">Precio Min</label>
+                    <select class="u-full-width" id="minimo">
+                            <option value="">Seleccione</option>
+                            <option value="5000">5,000</option>
+                            <option value="15000">15,000</option>
+                            <option value="20000">20,000</option>
+                            <option value="25000">25,000</option>
+                            <option value="30000">30,000</option>
+                            <option value="35000">35,000</option>
+                            <option value="40000">40,000</option>
+                            <option value="45000">45,000</option>
+                    </select>
+                </div>
+                <div class="three columns">
+                    <label for="maximo">Precio Max</label>
+                    <select class="u-full-width" id="maximo">
+                            <option value="">Seleccione</option>
+                            <option value="5000">5,000</option>
+                            <option value="15000">15,000</option>
+                            <option value="20000">20,000</option>
+                            <option value="25000">25,000</option>
+                            <option value="30000">30,000</option>
+                            <option value="35000">35,000</option>
+                            <option value="40000">40,000</option>
+                            <option value="45000">45,000</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="four columns">
+                        <label for="Edicion">Edicion</label>
+                        <select class="u-full-width" id="Edicion">
+                                <option value="">Seleccione</option>
+                                <option value="Primera">Primera</option>
+                                <option value="Segunda">Segunda</option>
+                                <option value="Tercera">Tercera</option>
+                                <option value="Cuarta">Cuarta</option>
+                                <option value="Quinta">Quinta</option>
+                                <option value="Sexta">Sexta</option>
+                                <option value="Septima">Septima</option>
+                        </select>
+                    </div>
+
+                    <div class="four columns">
+                        <label for="Categoria">Categoria</label>
+                        <select class="u-full-width" id="Categoria">
+                                <option value="">Seleccione</option>
+                                <option value="Humor">Humor</option>
+                                <option value="Literatura">Literatura</option>
+                                <option value="Hobby">Hobby</option>
+                                <option value="Poesia">Poesia</option>
+                        </select>
+                    </div>
+
+                    <div class="four columns">
+                        <label for="ISBN">ISBN</label>
+                        <input type="text" id="ISBN" maxlength="13">
+    
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+
+
+        <h1>Resultados</h1>
+        <div id="resultado"></div>
+    </div>
+
+    <a class="sitio-web"  >ED Tecnica MM</a>
+
+    <script src="js/dbL.js"></script>
+    <script src="js/buscadorLibros.js"></script>
+</body>
+</html>
