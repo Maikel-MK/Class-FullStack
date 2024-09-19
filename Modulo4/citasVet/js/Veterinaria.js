@@ -69,7 +69,7 @@ class ui{   //ui = user interface
         divMensaje.textContent = mensaje
 
         //agregar el mensaje 
-        document.querySelector('#contenido').insertBefore(divMensaje,document.querySelector('#agregar-cita'))
+        document.querySelector('#contenido').insertBefore(divMensaje,document.querySelector('.agregar-cita'))
 
         setTimeout(()=>{
                 divMensaje.remove()
