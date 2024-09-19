@@ -3,33 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página con Skeleton</title>
+    <title>Pizza Developer</title>
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/Salsa.css">
+    <link rel="shortcut icon" href="pizza.png" type="image/x-icon">
 
 </head>
 <body>
     <div class="container">
         <header class="row">
             <div class="twelve columns">
-                <h1>Bienvenido a mi Página</h1>
+                <h1>Pizza Developer</h1>
             </div>
         </header>
 
         <section class="row">
             <div class="six columns">
-                <h2>Sección 1</h2>
-                <p>Este es un párrafo en la primera sección.</p>
+                <h2>Pizzas Disponibles</h2>
+
+                <form name="pizzas">
+                   <label for="pizzas">Pequeñas</label>
+                    <input type="radio" name="Pizzas" id="Pp">Pizza Pequeña
+                    <br>
+                    <label for="pizza">Medianas</label>
+                    <input type="radio" name="Pizzas" id="Pm">Pizza Mediana
+                    <br>
+                    <label for="pizza">Grandes</label>
+                    <input type="radio" name="Pizzas" id="Pg">Pizza Grande
+
+
+                </form>
             </div>
             <div class="six columns">
-                <h2>Sección 2</h2>
-                <p>Este es un párrafo en la segunda sección.</p>
+                <h2>Ingredientes Extra</h2>
+
+                <form name="Ingredientes">
+
+                    <br>
+                    <label> Ingredientes de Pizza</label>
+                    <br>
+                    <input type="checkbox" name="Extra" value="Sencilla"> Sencilla
+                    <input type="checkbox" name="Extra" value="Champiñones"> Champiñones
+                    <br>
+                    <input type="checkbox" name="Extra" value="Jamon"> Jamon
+                    <input type="checkbox" name="Extra" value="Aceituna"> Aceituna
+                    <br>
+                    <input type="checkbox" name="Extra" value="Anchoas"> Anchoas
+                    <input type="checkbox" name="Extra" value="Salchichon"> Salchichon
+                    <br>
+                    <br>
+                    <button type="submit" name="boton" onclick="IngredientesExtra()">Elegir Ingredientes Extra</button>
+                    <br>
+                    <button type="reset" name="botonR">Cancelar</button>
+            
+                </form>                
             </div>
         </section>
 
         <footer class="row">
             <div class="twelve columns">
-                <p>&copy; 2024 Mi Página Web</p>
+                <p>2024 Maikel Todos los derechos Reservados</p>
             </div>
         </footer>
     </div>
