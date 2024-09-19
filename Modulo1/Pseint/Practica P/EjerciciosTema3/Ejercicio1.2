@@ -1,0 +1,35 @@
+Algoritmo ejercicio2
+//	1.2. Calcular un descuento del 25% para el precio de un curso y	mostrarle al usuario cuanto se ahorra y cuanto va a pagar
+	Repetir
+		Escribir "---------------------------------------"
+		Escribir "Felicidades Hay un Descuento del 25%"
+		Escribir "Introduzca Monto a Pagar"
+	Leer C
+	
+	
+	Si C>0 Entonces
+		C=C*0.25
+		Escribir "Se Ahorra: ",C
+		Escribir ""
+		C=(C/0.25)-C
+		Escribir "Usted Pagaría: ",C
+		Escribir ""
+		
+	SiNo
+		Si C=0 Entonces
+			Escribir ""
+			Escribir "~Adios~"
+		SiNo
+			si C<0 entonces
+				Escribir "Es preferible que el monto sea positivo"
+			FinSi
+			
+		FinSi
+	FinSi
+	
+Hasta Que C=0
+	
+	
+	
+	
+FinAlgoritmo

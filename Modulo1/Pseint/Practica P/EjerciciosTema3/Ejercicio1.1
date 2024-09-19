@@ -1,0 +1,34 @@
+Algoritmo Ejercicio1
+//	1.1. Calcular el promedio de 4 temperaturas medidas en ºC (Celsius) y
+//mostrar su equivalente en ºF (Fahrenhei) y considerando:
+	Repetir
+		Escribir "----------------------------------------------------------"
+		Escribir "Para salir solo Introduzca 0"
+	Escribir "Ingrese Las 4 Temperaturas en C° que desea Comvertir a F°"
+	Leer A,B,C,D
+	
+	Si A<>0 o B<>0 o C<>0 o D<>0 Entonces
+		A= 1.8 * A + 32
+		B= 1.8 * B + 32
+		C= 1.8 * C + 32
+		D= 1.8 * D + 32
+		Escribir "------------"
+		Escribir "Su Conversion serian: ",A, " F°"
+		Escribir "------------"
+		Escribir "Su Conversion serian: ",B, " F°"
+		Escribir "------------"
+		Escribir "Su Conversion serian: ",C, " F°"
+		Escribir "------------"
+		Escribir "Su Conversion serian: ",D, " F°"
+		Escribir ""
+		Escribir "Su Promedio Seria: ", (A+B+C+D)/4
+		
+	SiNo
+		Si A=0 y B=0 y C=0 y D=0 Entonces
+			Escribir "Felicidades 0 Absoluto XD Nos vemos~~~"
+			Escribir "Si le queda la duda el promedio son 32 F°"
+		FinSi
+	FinSi
+	Hasta que A+B+C+D=0
+FinAlgoritmo
+

@@ -1,0 +1,130 @@
+Algoritmo Cajero_Automatico
+	Definir Tarjeta Como Caracter
+	Definir Saldo Como Entero
+	Saldo <- 10000
+	Definir CTR Como Entero
+	Definir op Como Entero
+	Definir Cont Como Entero
+	Cont <- 0
+	Definir Ret Como Entero
+	Definir Ret_r Como Entero
+	Definir V Como Entero
+
+	
+	Escribir  'Ingrese su Tarjeta                              (Tocar Cualquier Tecla)'//a Falta de Tarjeta Tocar una tecla cualquiea
+	Esperar Tecla
+	Repetir
+		
+		Escribir 'Ingrese su Contraseña                            (1234)' 
+		Leer CTR
+		Si CTR=1234 Entonces  //La Contraseña es 1234
+			Escribir "Bienvenido"
+			Si Cont<3 Entonces //1er Menu 
+				Escribir 'Que Operacion Desea Realizar:'
+				Escribir " Retiro    (1)"
+				Escribir " Consulta  (2)"
+				Escribir " Salir     (3)"
+				Leer op
+				Si Saldo>0 Entonces //2do Menu
+					Si op=1 Entonces 
+						Escribir "Que Operacion Desea Realizar"
+						Escribir " Retiro Rapido    (1)"
+						Escribir " Retiro           (2)"
+						Escribir " Salir            (3)"
+						Leer Ret
+						Si Ret=1 Entonces //1er sub-menu
+							si Saldo>=20 Entonces 
+								
+							Escribir 'Cuanto Desea Retirar?'
+							Escribir '   1. 20'
+							Escribir '   2. 50'
+							Escribir '   3. 100'
+							Escribir '   4. 200'
+							Escribir '   5. 500'
+							Escribir '   6. Salir'
+							Leer Ret_r
+							Según Ret_r Hacer
+								1:
+									Escribir 'Ha Retirado 20 BS'
+									Saldo <- Saldo-20
+								2:
+									Escribir 'Ha Retirado 50 BS'
+									Saldo <- Saldo-50
+								3:
+									Escribir 'Ha Retirado 100 BS'
+									Saldo <- Saldo-100
+								4:
+									Escribir 'Ha Retirado 200 BS'
+									Saldo <- Saldo-200
+								5:
+									Escribir 'Ha Retirado 500 BS'
+									Saldo <- Saldo-500
+								6:
+									Escribir "Retire su Tarjeta"
+								De Otro Modo:
+									Escribir 'Opcion Invalida'
+							FinSegún
+						FinSi
+						FinSi
+						Si Ret=2 Entonces //2do sub-menu
+							si Saldo>=1000 Entonces
+								
+							
+							Escribir 'Cuanto Desea Retirar?'
+							Escribir '   1. 1000'
+							Escribir '   2. 1500'
+							Escribir '   3. 2000'
+							Escribir '   4. 2500'
+							Escribir '   5. 5000'
+							Escribir '   6. Salir'
+							Leer Ret_r
+							Según Ret_r Hacer
+								1:
+									Escribir 'Ha Retirado 1000 BS'
+									Saldo <- Saldo-1000
+								2:
+									Escribir 'Ha Retirado 1500 BS'
+									Saldo <- Saldo-1500
+								3:
+									Escribir 'Ha Retirado 2000 BS'
+									Saldo <- Saldo-2000
+								4:
+									Escribir 'Ha Retirado 2500 BS'
+									Saldo <- Saldo-2500
+								5:
+									Escribir 'Ha Retirado 5000 BS'
+									Saldo <- Saldo-5000
+								6:
+									Escribir "Retire su Tarjeta"
+								De Otro Modo:
+									Escribir 'Opcion invalida'
+							FinSegún
+						FinSi
+						FinSi
+					FinSi
+				SiNo
+					Escribir 'Saldo Insuficiente'
+				FinSi
+				Si op=2 Entonces
+					Escribir 'Su saldo Restante son ', Saldo " BS"
+					Escribir "Volver (1) o Salir (2)"
+					Leer V
+					
+				FinSi
+				Si op>3 o Ret>3 Entonces
+					Escribir 'Operacion Invalida'
+				FinSi
+				
+				Si op=3 o Ret=3 o V=2 Entonces
+					Escribir "Retire su Tarjeta"
+				FinSi
+			FinSi
+		SiNo
+			Escribir 'Contraseña Incorrecta'
+			Cont <- Cont+1
+		FinSi
+	Hasta Que Cont==3  o op==3  o Ret==3 o Ret_r==6 o V==2
+	Si Cont==3 Entonces
+		Escribir 'Tarjeta Bloqueada Despues de 3 intentos Invalidos'
+	FinSi
+FinAlgoritmo

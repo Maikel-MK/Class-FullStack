@@ -1,0 +1,109 @@
+Funcion A = Ejercicio5 ( b1,b2b,h )
+	
+	A = (b1+b2/2)*h
+	
+Fin Funcion
+
+Funcion h = Ejercicio4 ( x,p,a,yy,q,b)
+	
+	h = (((x-p)^2/a^2) + ((yy-q)^2/b^2))/1
+	
+Fin Funcion
+
+Funcion a = Ejercicio3 ( x,c,yy )
+	
+	a = (raiz(((x+c)^2) + ((yy-0)^2)) + raiz(((x-c)^2) + ((yy-0)^2)))/2
+	
+	
+Fin Funcion
+
+Funcion oo = Ejercicio2 (x,yy,a,b,r )
+	
+	oo = (x)^2+(yy)^2-2*a*x-2*b*yy+(a)^2+(b)^2-(r)^2
+	
+Fin Funcion
+
+Funcion r = Ejercicio1( x,a,yy,b )
+	
+	r = raiz((x-a)^2+(yy-b)^2)
+	
+Fin Funcion
+
+Algoritmo Ejercicios
+	Repetir
+	Escribir "-------------------------------------------------------------------------------" 
+	Escribir "Aqui estan todos los ejercicios de las expreciones Matematicas"
+	Escribir "Seleccione Cual quiere Probar hay Opciones del 1 al 5 ó Seleccione 0 Para Salir"
+	Leer op
+	Segun op
+		1:
+			Escribir "Para Saber el Valor de r"
+			Escribir "Introduzca el Valor de x"
+			Leer x
+			Escribir "Introduzca el Valor de a"
+			Leer a
+			Escribir "Introduzca el Valor de y"
+			Leer yy
+			Escribir "Introduzca el valor de b"
+			Leer b
+			r = Ejercicio1( x,a,yy,b )
+			Escribir "El resultado es: ",r
+		2:
+			Escribir "Para Saber el Valor de 0"
+			Escribir "Introduzca el Valor de x"
+			Leer x
+			Escribir "Introduzca el Valor de y"
+			Leer yy
+			Escribir "Introduzca el Valor de a"
+			Leer a
+			Escribir "Introduzca el valor de b"
+			Leer b
+			Escribir "Introduzca el valor de r"
+			Leer r
+			oo = Ejercicio2 (x,yy,a,b,r )
+			Escribir "El resultado es: ",oo
+		3:
+			Escribir "Para Saber el Valor de a"
+			Escribir "Introduzca el Valor de x"
+			Leer x
+			Escribir "Introduzca el Valor de c"
+			Leer c
+			Escribir "Introduzca el Valor de y"
+			Leer yy
+			a = Ejercicio3 ( x,c,yy )
+			Escribir "El resultado es: ",a
+		4:
+			Escribir "Para Saber el Valor "
+			Escribir "Introduzca el Valor de x"
+			Leer x
+			Escribir "Introduzca el Valor de p"
+			Leer p
+			Escribir "Introduzca el Valor de a"
+			Leer a
+			Escribir "Introduzca el Valor de y"
+			Leer yy
+			Escribir "Introduzca el Valor de q"
+			Leer q
+			Escribir "Introduzca el Valor de b"
+			Leer b
+			h =  Ejercicio4 ( x,p,a,yy,q,b)
+			Escribir "El resultado es: ",h
+		5:
+			Escribir "Para Saber el Valor de A"
+			Escribir "Introduzca el Valor de b1"
+			Leer b1
+			Escribir "Introduzca el Valor de b2"
+			Leer b2
+			Escribir "Introduzca el Valor de h"
+			Leer h
+			A = Ejercicio5 ( b1,b2b,h )
+			Escribir "El resultado es: ",A
+			
+		0:
+			Escribir "Vuelva Pronto~"
+		De Otro Modo:
+			Escribir "Opcion no Permitida"
+	FinSegun
+	
+Hasta Que op=0
+FinAlgoritmo
