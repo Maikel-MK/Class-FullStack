@@ -39,6 +39,27 @@ function ejecutarSpeechAPI(){
     //lo que hayamos grabado lo mostramos como texto
     recognition.onresult = function(e){
         console.log(e.results)
+
+        const{confidence,transcript} = e.results[0][0]
+
+        //console.log(confidence,transcript)
+
+        // if(confidence >= 0.9){
+        //     console.log('siii', transcript)
+        // }else{
+        //     console.log('nooo')
+        //}
+
+        //salida.textContent = transcript
+
+        const confianza = document.createElement('p')
+        confianza.innerHTML = `Confianza: ${confidence}`
+
+        const speech = document.createElement('p')
+        speech.innerHTML = `lo que escuche: ${transcript}`
+
+        salida.appendChild(speech)
+        salida.appendChild(confianza)
     }
 }
 
