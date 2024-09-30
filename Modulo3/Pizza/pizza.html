@@ -21,7 +21,7 @@
             <div class="six columns">
                 <h2>Pizzas Disponibles</h2>
 
-                <form name="pizzas">
+                <form name="pizzas" id="tamaño">
                    <label for="pizzas">Pequeñas</label>
                     <input type="radio" name="Pizzas" id="Pp">Pizza Pequeña
                     <br>
@@ -37,7 +37,7 @@
             <div class="six columns">
                 <h2>Ingredientes Extra</h2>
 
-                <form name="Ingredientes">
+                <form name="Ingredientes" id="ingredientsE">
 
                     <br>
                     <label> Ingredientes de Pizza</label>
@@ -52,11 +52,15 @@
                     <input type="checkbox" name="Extra" value="Salchichon"> Salchichon
                     <br>
                     <br>
-                    <button type="submit" name="boton" onclick="IngredientesExtra()">Elegir Ingredientes Extra</button>
+                    <button type="submit" name="boton" id="Elegido">Elegir Ingredientes Extra</button>
                     <br>
-                    <button type="reset" name="botonR">Cancelar</button>
+                    <button type="reset" name="botonR" id="Cancelar">Cancelar</button>
             
                 </form>                
+            </div>
+
+            <div id="resultado">
+                <p></p>
             </div>
         </section>
 
