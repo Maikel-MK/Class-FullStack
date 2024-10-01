@@ -17,60 +17,60 @@
             </div>
         </header>
 
-        <section class="row">
-            <div class="six columns">
-                <h2>Pizzas Disponibles</h2>
+<form id="formulario">
 
-                <form name="pizzas" id="tamaño">
-                   <label for="pizzas">Pequeñas</label>
-                    <input type="radio" name="Pizzas" id="Pp">Pizza Pequeña
-                    <br>
-                    <label for="pizza">Medianas</label>
-                    <input type="radio" name="Pizzas" id="Pm">Pizza Mediana
-                    <br>
-                    <label for="pizza">Grandes</label>
-                    <input type="radio" name="Pizzas" id="Pg">Pizza Grande
+    <div >
+     <h2>Pizzas Disponibles</h2>
+
+           <label>Pequeñas</label> 
+            <input type="radio" name="Pizzas" id="Pizzas" onclick="seleccionarPizza(true)">Pizza Pequeña
+            <br>
+            <label>Medianas</label>
+            <input type="radio" name="Pizzas" id="Pizzas" onclick="seleccionarPizza(true)">Pizza Mediana
+            <br>
+            <label>Grandes</label>
+            <input type="radio" name="Pizzas" id="Pizzas" onclick="seleccionarPizza(true)">Pizza Grande
 
 
-                </form>
-            </div>
-            <div class="six columns">
+            <div class="checkboxes" >
                 <h2>Ingredientes Extra</h2>
-
-                <form name="Ingredientes" id="ingredientsE">
-
+        
                     <br>
                     <label> Ingredientes de Pizza</label>
                     <br>
-                    <input type="checkbox" name="Extra" value="Sencilla"> Sencilla
-                    <input type="checkbox" name="Extra" value="Champiñones"> Champiñones
+                    <input type="checkbox" class="Extra" value="0"> Sencilla
+                    <input type="checkbox" class="Extra" value="1"> Champiñones
                     <br>
-                    <input type="checkbox" name="Extra" value="Jamon"> Jamon
-                    <input type="checkbox" name="Extra" value="Aceituna"> Aceituna
+                    <input type="checkbox" class="Extra" value="1"> Jamon
+                    <input type="checkbox" class="Extra" value="1"> Aceituna
                     <br>
-                    <input type="checkbox" name="Extra" value="Anchoas"> Anchoas
-                    <input type="checkbox" name="Extra" value="Salchichon"> Salchichon
+                    <input type="checkbox" class="Extra" value="1"> Anchoas
+                    <input type="checkbox" class="Extra" value="1"> Salchichon
                     <br>
                     <br>
-                    <button type="submit" name="boton" id="Elegido">Elegir Ingredientes Extra</button>
+                    <button type="button" name="boton" onclick="total()">Elegir Ingredientes Extra</button>
                     <br>
-                    <button type="reset" name="botonR" id="Cancelar">Cancelar</button>
-            
-                </form>                
+                    <button type="reset" name="botonR">Cancelar</button>
+                          
             </div>
 
-            <div id="resultado">
-                <p></p>
+        </div>
+    
+</form>
+            <div>
+                <p class="result" id="resultado"></p>
             </div>
-        </section>
+                
 
-        <footer class="row">
+
+        <!-- <footer class="row">
             <div class="twelve columns">
                 <p>2024 Maikel Todos los derechos Reservados</p>
             </div>
-        </footer>
+        </footer> -->
 
         <script src="js/Pizza.js"></script>
     </div>
+    
 </body>
 </html>

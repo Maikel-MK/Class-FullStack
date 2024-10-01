@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox y Radio Buttons</title>
+    <style>
+        body {
+            text-align: center; /* Centra el texto en la página */
+            font-family: Arial, sans-serif; /* Establece la fuente de la página */
+        }
+        .result {
+            margin-top: 20px; /* Espacio superior para el resultado */
+            font-weight: bold; /* Hace el texto del resultado más grueso */
+        }
+    </style>
+</head>
+<body>
+
+<h2>Selecciona Opciones</h2>
+
+<form id="formulario">
+    <div>
+        <h3>Radio Buttons (selecciona uno para activar checkboxes)</h3>
+        <!-- Radio buttons que permiten seleccionar una opción -->
+        <input type="radio" name="opcion" value="1" onclick="toggleCheckboxes()"> Opción 1 (Valor 1)<br>
+        <input type="radio" name="opcion" value="2" onclick="toggleCheckboxes()"> Opción 2 (Valor 2)<br>
+        <input type="radio" name="opcion" value="3" onclick="toggleCheckboxes()"> Opción 3 (Valor 3)<br>
+    </div>
+
+    <div id="checkboxes" style="display:none;">
+        <h3>Checkboxes (cada uno suma 1)</h3>
+        <!-- Checkboxes que suman 1 cada uno si son seleccionados -->
+        <input type="checkbox" class="check" value="1"> Opción A<br>
+        <input type="checkbox" class="check" value="1"> Opción B<br>
+        <input type="checkbox" class="check" value="1"> Opción C<br>
+    </div>
+
+    <!-- Botón para calcular la suma total -->
+    <button type="button" onclick="calcular()">Calcular Suma</button>
+</form>
+
+<!-- Elemento para mostrar el resultado de la suma -->
+<p class="result" id="resultado"></p>
+
+<script>
+// Función para mostrar y habilitar los checkboxes al seleccionar un radio button
+function toggleCheckboxes() {
+    const checkboxes = document.getElementById('checkboxes');
+    checkboxes.style.display = 'block'; // Muestra los checkboxes
+    const checkboxInputs = document.querySelectorAll('.check');
+    
+    // Habilita todos los checkboxes
+    checkboxInputs.forEach((checkbox) => {
+        checkbox.disabled = false; // Permite seleccionar los checkboxes
+    });
+}
+
+// Función para calcular la suma total de los valores seleccionados
+function calcular() {
+    let suma = 0; // Inicializa la suma
+
+    // Sumar el valor del radio button seleccionado
+    const selectedRadio = document.querySelector('input[name="opcion"]:checked');
+    if (selectedRadio) {
+        suma += parseInt(selectedRadio.value); // Suma el valor del radio button seleccionado
+    }
+
+    // Sumar los valores de los checkboxes seleccionados
+    let checkboxes = document.querySelectorAll('.check');
+    checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+            suma += parseInt(checkbox.value); // Suma el valor de cada checkbox seleccionado
+        }
+    });
+
+    // Muestra el resultado en el elemento correspondiente
+    document.getElementById('resultado').innerText = `Suma total: ${suma}`;
+}
+</script>
+
+</body>
+</html>

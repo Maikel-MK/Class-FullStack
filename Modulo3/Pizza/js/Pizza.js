@@ -1,56 +1,42 @@
-const tamañoPizza = document.querySelector('#tamaño')
-const ingredientesExtra = document.querySelector('#ingredientsE')
-const Total = document.querySelector('#resultado p')
-const orden = document.querySelector('#Elegido')
-const cancelacion = document.querySelector('#Cancelar')
-let Pizza = []
+const seleccion = document.querySelector('.Extra')
+let suma = 0
 
-//enentos
-tomarOreden()
-function tomarOreden(){
 
-    
+function seleccionarPizza(Pizzas){
+    const tamaño = document.getElementById('checkboxes')
+    if(Pizzas){
+        tamaño.style.display ='block'
+        
+        seleccion.for((checkbox)=>{
+            checkbox.disabled = false
+        })
+    }else{
+        tamaño.style.display = 'none'
+        limpiarHTML()
+    }
 }
-
-
-
-
-function leerdatos(){
-   
-}
-
-
-
-
-
-// function  crearHTML(){
-//     limpiarHTML()
-//     Pizza.forEach(i=>{
-//         const row = document.createElement('tr') //tr: es table row = fila de la tabla
-//         row.innerHTML = `
-//         <td>
-//         <img src="${i.imagen}"width=100>
-//         </td>
-//         <td>${i.nombre}</td>
-//         <td>${i.precio}</d>
-//         <td>${i.cantidad}</td>
-//         <td>
-//             <a href="#" id=${i.id} class="borrar-curso">X</a>
-//         </td>
-//         `
-
-//         Total.appendChild(row)
-//     })
-// }
-
 
 function limpiarHTML(){
-    while(Total.firstChild){
-
-        Total.removeChild(Total.firstChild)
-    }
-   }
-
-function error(){
+    seleccion.for((checkbox)=>{
+        checkbox.checked = false; 
+        checkbox.disabled = true;
+    })
 
 }
+
+function total(){
+seleccion.for((checkbox)=>{
+    if (checkbox.checked){
+        suma += parseInt(checkbox.value)
+    }
+})
+
+document.getElementById('resultado').innerText = `EL valor de su Pizza es de: ${suma}`
+
+}
+
+
+
+
+
+
