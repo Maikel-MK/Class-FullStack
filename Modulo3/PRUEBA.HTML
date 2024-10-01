@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkbox y Radio Buttons</title>
+    <!-- Enlace a Skeleton.css desde un CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <style>
         body {
             text-align: center; /* Centra el texto en la página */
             font-family: Arial, sans-serif; /* Establece la fuente de la página */
+            margin-top: 50px; /* Espacio superior para separar del borde */
         }
         .result {
             margin-top: 20px; /* Espacio superior para el resultado */
             font-weight: bold; /* Hace el texto del resultado más grueso */
+        }
+        h2 {
+            margin-bottom: 30px; /* Espacio inferior para el título */
+        }
+        #formulario {
+            max-width: 600px; /* Ancho máximo del formulario */
+            margin: auto; /* Centra el formulario en la página */
         }
     </style>
 </head>
@@ -19,25 +29,29 @@
 
 <h2>Selecciona Opciones</h2>
 
-<form id="formulario">
-    <div>
-        <h3>Radio Buttons (selecciona uno para activar checkboxes)</h3>
-        <!-- Radio buttons que permiten seleccionar una opción -->
-        <input type="radio" name="opcion" value="1" onclick="toggleCheckboxes()"> Opción 1 (Valor 1)<br>
-        <input type="radio" name="opcion" value="2" onclick="toggleCheckboxes()"> Opción 2 (Valor 2)<br>
-        <input type="radio" name="opcion" value="3" onclick="toggleCheckboxes()"> Opción 3 (Valor 3)<br>
+<form id="formulario" class="container">
+    <div class="row">
+        <div class="six columns">
+            <h3>Radio Buttons (selecciona uno para activar checkboxes)</h3>
+            <!-- Radio buttons que permiten seleccionar una opción -->
+            <input type="radio" name="opcion" value="1" onclick="toggleCheckboxes()"> Opción 1 (Valor 1)<br>
+            <input type="radio" name="opcion" value="2" onclick="toggleCheckboxes()"> Opción 2 (Valor 2)<br>
+            <input type="radio" name="opcion" value="3" onclick="toggleCheckboxes()"> Opción 3 (Valor 3)<br>
+        </div>
     </div>
 
-    <div id="checkboxes" style="display:none;">
-        <h3>Checkboxes (cada uno suma 1)</h3>
-        <!-- Checkboxes que suman 1 cada uno si son seleccionados -->
-        <input type="checkbox" class="check" value="1"> Opción A<br>
-        <input type="checkbox" class="check" value="1"> Opción B<br>
-        <input type="checkbox" class="check" value="1"> Opción C<br>
+    <div id="checkboxes" class="row" style="display:none;">
+        <div class="six columns">
+            <h3>Checkboxes (cada uno suma 1)</h3>
+            <!-- Checkboxes que suman 1 cada uno si son seleccionados -->
+            <input type="checkbox" class="check" value="1"> Opción A<br>
+            <input type="checkbox" class="check" value="1"> Opción B<br>
+            <input type="checkbox" class="check" value="1"> Opción C<br>
+        </div>
     </div>
 
     <!-- Botón para calcular la suma total -->
-    <button type="button" onclick="calcular()">Calcular Suma</button>
+    <button type="button" class="button-primary" onclick="calcular()">Calcular Suma</button>
 </form>
 
 <!-- Elemento para mostrar el resultado de la suma -->
