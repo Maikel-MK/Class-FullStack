@@ -22,12 +22,14 @@ const pais = document.querySelector('#pais').value
    if(ciudad === ""  || pais === ""){
     mostrarError('Los campos son obligatorios')
    }else{
-    console.log('campos llenos')
+    //console.log('campos llenos')
+    consultarAPI(ciudad,pais)
    }
 }
 
 
-function mostrarError(mensaje){
+function mostrarError(mensaje){  //esto funciona para los errores
+
 //hay un truco para evitar que el mensaje de error salga demasiado sin el setTimeout
 const alerta = document.querySelector('.bg-red-100')
 
@@ -37,9 +39,12 @@ console.log(alerta)
 if (!alerta){//aqui se niega la falsedad asi que se vuelve true "si no lo consigues CREALO"
 
     const alertaM = document.createElement('div')
-        alertaM.innerHTML = mensaje
-        alertaM.classList.add('bg-red-100')
+        alertaM.innerHTML = `<strong>${mensaje}</strong>`
+        alertaM.classList.add('bg-red-100', 'text-center', 'text-red-500', 'py-3', 'mt-4', 'max-w-md', 'mx-auto', 'bg-red-300')
 
         contenedor.appendChild(alertaM)
-}
+        setTimeout(() => {
+            alertaM.remove()
+        },3000)
+    }
 }
