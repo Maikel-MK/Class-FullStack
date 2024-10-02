@@ -27,6 +27,20 @@ const pais = document.querySelector('#pais').value
    }
 }
 
+function consultarAPI(ciudad,pais){
+    const appid = 'd512dcb1f52d42110fc4ec113a530b11'
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appid}`
+
+    fetch(url)
+    .then(respuesta=>{//el status 200 quiere decir que se conecto bien y 404 que no se conecto bien
+        //console.log(respuesta)
+        return respuesta.json()
+    })
+    .then(datos=>{
+        console.log(datos)
+    })
+}
+
 
 function mostrarError(mensaje){  //esto funciona para los errores
 
