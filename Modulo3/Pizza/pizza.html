@@ -10,57 +10,46 @@
 
 </head>
 <body>
-    <div class="container">
-        <header class="row">
-            <div class="twelve columns">
-                <h1>Pizza Developer</h1>
+
+    <form id="formulario" class="container">
+        <div class="row">
+            <div class="six columns">
+                <h3>Pizzas Disponibles</h3>
+                <!-- Radio buttons que permiten seleccionar una opción -->
+                <input type="radio" name="Pizza" value="1" onclick="seleccionarPizza()"> Pizza Pequeña<br>
+                <input type="radio" name="Pizza" value="1" onclick="seleccionarPizza()"> Pizza Mediana<br>
+                <input type="radio" name="Pizza" value="1" onclick="seleccionarPizza()"> Pizza Grande<br>
             </div>
-        </header>
-
-<form id="formulario">
-
-    <div >
-     <h2>Pizzas Disponibles</h2>
-
-           <label>Pequeñas</label> 
-            <input type="radio" name="Pizzas" id="Pizzas" onclick="seleccionarPizza(true)">Pizza Pequeña
-            <br>
-            <label>Medianas</label>
-            <input type="radio" name="Pizzas" id="Pizzas" onclick="seleccionarPizza(true)">Pizza Mediana
-            <br>
-            <label>Grandes</label>
-            <input type="radio" name="Pizzas" id="Pizzas" onclick="seleccionarPizza(true)">Pizza Grande
-
-
-            <div class="checkboxes" >
-                <h2>Ingredientes Extra</h2>
-        
-                    <br>
-                    <label> Ingredientes de Pizza</label>
-                    <br>
-                    <input type="checkbox" class="Extra" value="0"> Sencilla
-                    <input type="checkbox" class="Extra" value="1"> Champiñones
-                    <br>
-                    <input type="checkbox" class="Extra" value="1"> Jamon
-                    <input type="checkbox" class="Extra" value="1"> Aceituna
-                    <br>
-                    <input type="checkbox" class="Extra" value="1"> Anchoas
-                    <input type="checkbox" class="Extra" value="1"> Salchichon
-                    <br>
-                    <br>
-                    <button type="button" name="boton" onclick="total()">Elegir Ingredientes Extra</button>
-                    <br>
-                    <button type="reset" name="botonR">Cancelar</button>
-                          
-            </div>
-
         </div>
     
-</form>
-            <div>
-                <p class="result" id="resultado"></p>
+        <div id="checkboxes" class="row" style="display:none;">
+            <div class="six columns">
+                <h3>Ingredientes de Pizza</h3>
+                <!-- Checkboxes que suman 1 cada uno si son seleccionados -->
+                <input type="checkbox" class="Extra" value="0"> Sencilla
+                <br>
+                <input type="checkbox" class="Extra" value="1"> Champiñones
+                <br>
+                <input type="checkbox" class="Extra" value="1"> Jamon
+                <br>
+                <input type="checkbox" class="Extra" value="1"> Aceituna
+                <br>
+                <input type="checkbox" class="Extra" value="1"> Anchoas
+                <br>
+                <input type="checkbox" class="Extra" value="1"> Salchichon
+                <br>
             </div>
-                
+        </div>
+    
+        <!-- Botón para calcular la suma total -->
+        <button type="button" class="button-primary" onclick="total()">Calcular Coste</button>
+        <br>
+        <button type="reset" name="botonR">Cancelar</button>
+    </form>
+    
+    <!-- Elemento para mostrar el resultado de la suma -->
+    <p class="result container" id="resultado"></p>
+                   
 
 
         <!-- <footer class="row">
