@@ -37,11 +37,74 @@ function consultarAPI(ciudad,pais){
         return respuesta.json()
     })
     .then(datos=>{
-        console.log(datos)
-        mostrarHTML()
+        //console.log(datos)
+       
+
+        if (datos.cod ==='404'){
+            mostrarError('La ciudad no se ha Encontrado, Ingresa una ciudad valida por favor')
+        }else{
+            
+             mostrarHTML(datos)
+
+        }
+        //console.log(datos.cod)
+       
+    })
+
+    .catch(error=>{
+        console.log(error)
     })
 }
 
+function gradosKelvinaC(temperatura){
+    return temperatura-273.15
+}
+
+function mostrarHTML(data){
+    limpiarHTML()
+    console.log(data)
+
+
+    const {name,main:{temp,temp_max,temp_min}} = data//para acceder y sacar los daton en vez de hacer main.tem. etc etc se hace main:{temp} y asi es mas directo
+
+    //console.log(name,temp,temp_max,temp_min)
+
+    //convertir a grados celsius
+
+    const TA = Math.round(gradosKelvinaC(temp))//quitamos los decimales
+    const TMa = Math.round(gradosKelvinaC(temp_max))
+    const TMm = Math.round(gradosKelvinaC(temp_min))
+
+
+    //mostrar resultados en el HTML
+
+    const nCiudad = document.createElement('p')
+    nCiudad.innerHTML = `El Clima en: ${name}`
+    nCiudad.classList.add('text-white','text-center','text-3xl')
+
+    const tempA = document.createElement('p')
+    tempA.innerHTML = `${TA}`
+    tempA.classList.add('text-white','text-center')
+
+    const min = document.createElement('p')
+    min.innerHTML = `Temp min: ${TMm}`
+    min.classList.add('text-white','text-center')
+
+    const max = document.createElement('p')
+    max.innerHTML = `Temp max: ${TMa}`
+    max.classList.add('text-white','text-center')
+
+    resultado.appendChild(nCiudad)
+    resultado.appendChild(tempA)
+    resultado.appendChild(min)
+    resultado.appendChild(max)
+}
+
+function limpiarHTML(){
+    while(resultado.firstChild){
+        resultado.removeChild(resultado.firstChild)
+    }
+}
 
 function mostrarError(mensaje){  //esto funciona para los errores
 
