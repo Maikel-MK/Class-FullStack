@@ -13,8 +13,20 @@ function obtenerDatos(){
 
     .then(datos=>{//aqui se muestra la conversion porque resive la el de arriba
         console.log(datos)
+        mostrarHTMLTXT(datos)
     })
     .catch(error=>{
         console.log(error)
     })
+}
+
+function mostrarHTMLTXT(data){
+    const contenido = document.querySelector('#contenido')
+    let texto = ''
+
+    texto = data
+
+    contenido.innerHTML = texto
+
+
 }

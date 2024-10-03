@@ -28,7 +28,7 @@ function cargarDatosAPI(){
         const {author,post_url} = i
         
         texto +=`
-    <p>Autos: ${author}</p>
+    <p>Autor: ${author}</p>
     <a href=${post_url}>Ver Imagen: </a>
     `
     });

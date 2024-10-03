@@ -28,7 +28,7 @@ const pais = document.querySelector('#pais').value
 }
 
 function consultarAPI(ciudad,pais){
-    const appid = 'd512dcb1f52d42110fc4ec113a530b11'
+    const appid = '0d53411182e6bb904570600774d18dd0'
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appid}`
 
     fetch(url)
@@ -38,6 +38,7 @@ function consultarAPI(ciudad,pais){
     })
     .then(datos=>{
         console.log(datos)
+        mostrarHTML()
     })
 }
 
