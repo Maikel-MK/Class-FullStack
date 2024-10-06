@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(to right, #f9f3e9 0%, #b15500 50%, #8a0000 100%);
+    background-image: linear-gradient(to right, #684a16 0%, #b15500 50%, #502b2b 100%);
 
     color: #333; 
     font-family: Arial, sans-serif; 
@@ -20,11 +20,15 @@ body {
     max-width: 800px; 
 }
 
-h1 {
-    color: #000000; 
-    text-align: center;
-    margin-bottom: 20px; 
-}
+    h1 {
+        color: #553622; 
+        text-align: center; 
+        font-size: 2.5em; 
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
+        letter-spacing: 1px; 
+    }
+
 h3 {
     color: #9c1818; 
     text-align: center;
@@ -75,7 +79,18 @@ h3 {
    align-items: center; 
    margin-right: 15px; 
 }
+.radios{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
 
+.radio-G{
+    display: flex;
+    align-items: center; 
+    justify-content: space-around; 
+}
 .error {
    color: red; 
    text-align: center;
@@ -93,6 +108,36 @@ h3 {
    text-align: center; 
    margin-top: 20px; 
    display: none; 
+}
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 160px; /* Ancho del tooltip */
+    background-color: #555; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    
+    /* Posicionamiento del tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Colocar arriba del elemento */
+    left: 50%;
+    margin-left: -80px; /* Centrar el tooltip */
+    
+    /* Transiciones */
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s;
+}
+
+/* Mostrar el tooltip al pasar el mouse */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1; /* Hacer visible */
 }
 
 footer {

@@ -52,7 +52,7 @@ function mostrarError(mensaje) {
 }
 
 function mostrarResultado(precio) {
-   TOTAL.textContent = `El precio de la pizza es: $${precio.toFixed(2)}, ${Extra.value}`
+   TOTAL.textContent = `El precio de la pizza es: $${precio.toFixed(2)}`
    TOTAL.style.display = 'block' // Mostrar mensaje de resultado
 }
 
