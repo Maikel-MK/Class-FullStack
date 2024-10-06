@@ -7,72 +7,107 @@
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/Salsa.css">
     <link rel="shortcut icon" href="pizza.png" type="image/x-icon">
-    <style>
-
-    </style>
 </head>
 <body>
 
-    <h1>Pizzeria la Salsa de la Costa</h1>
+    <h1>Pizzeria El Rincon del Sabor</h1>
     <form id="formulario" class="container">
         <div class="row">
             <div class="column">
                 <h3>Pizzas Disponibles</h3>
-                <!-- Tamaños de pizzas -->
-                <input type="radio" name="Pizza" id="Pizzap" > 
-                <label for="Pizzap">Pizza Pequeña</label><br>
-                <input type="radio" name="Pizza" id="Pizzam" > 
-                <label for="Pizzam">Pizza Mediana</label><br>
-                <input type="radio" name="Pizza" id="Pizzag"> 
-                <label for="Pizzag">Pizza Grande</label><br>
+                <div class="checkboxes">
+                    <div class="checkbox-group">
+                        <input type="radio" name="Pizza" id="Pizzap" > 
+                        <label for="Pizzap">Pizza Pequeña</label><br>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="radio" name="Pizza" id="Pizzam" > 
+                        <label for="Pizzam">Pizza Mediana</label><br>
+    
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="radio" name="Pizza" id="Pizzag" > 
+                        <label for="Pizzag">Pizza Grande</label><br>
+    
+                    </div>
+    
+                </div>
             </div>
-            
+
             <div class="column checkboxes" id="checkboxes" style="display:none;">
-                <fieldset>
-                    <legend>Ingredientes Extra</legend>
+                <h3>Ingredientes Extra</h3>
+                <div class="checkboxes">
 
-
-                    <div>
-                        <input type="checkbox" class="Extra" value=""> 
-                        <label>Queso Extra</label><br>
-                        <input type="checkbox" class="Extra" value=""> 
-                        <label>Champiñones</label><br>
-                        <input type="checkbox" class="Extra" value=""> 
-                        <label>Jamon</label><br>
-                        <input type="checkbox" class="Extra" value=""> 
-                        <label>Aceituna</label><br>
-                        <input type="checkbox" class="Extra" value=""> 
-                        <label>Anchoas</label><br>
+                    <div class="row">
+                        <div class="column">
+                            <div class="checkbox-group">
+                                <input type="checkbox" class="Extra" > 
+                                <label>Queso Extra</label><br>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" class="Extra" > 
+                                <label>Champiñones</label><br>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" class="Extra"> 
+                                <label>Jamon</label><br>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" class="Extra"> 
+                                <label>Aceituna</label><br>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" class="Extra"> 
+                                <label>Anchoas</label><br>
+                            </div>
+                        </div>
                     </div>
-               
-                    <div>
-                        <input type="checkbox" class="Extra" value=""> 
-                        <label>Atun</label><br>
-                        <input type="checkbox" class="Extra" value=""> 
-                        <label>Pepperoni</label><br>
-                        <input type="checkbox" class="Extra" value=""> 
-                        <label>Pollo</label><br>
-                        <input type="checkbox" class="Extra" value=""> 
-                        <label>Bacon</label><br>
-                        <input type="checkbox" class="Extra" value=""> 
-                        <label>Pimientos</label><br>
-                    </div>
+                    
 
-                </fieldset>
+                    <div class="row">
+                        <div class="column">
+                            <div class="checkbox-group">
+                                <input type="checkbox" class="Extra" > 
+                                <label>Atun</label><br>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" class="Extra" > 
+                                <label>Pepperoni</label><br>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" class="Extra" > 
+                                <label>Pollo</label><br>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" class="Extra" > 
+                                <label>Bacon</label><br>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" class="Extra" > 
+                                <label>Pimientos</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
 
-        <!-- Botón de total -->
-        <button type="button" class="button-primary">Calcular Coste</button>
-        <br><br>
-        <!-- Botón de reset -->
-        <button type="button" id="cancelarBtn" class="button-primary">Cancelar</button>
+        <div class="buton-group">
+            <button type="button" class="button-primario">Calcular Coste</button>
+            <button type="button" id="cancelarBtn" class="button-primario">Cancelar</button>
+        </div>
 
     </form>
 
-    <!-- Elemento para mostrar el resultado de la suma -->         
-    <p class="result" id="resultado"></p>
-    <p class="error" id="error"></p>
+    <div id="messages">
+      <p class="result" id="resultado"></p>
+
+
+      <p class="error" id="error"></p>
+    </div>
 
     <footer class="row">
         <div class="twelve columns">
@@ -81,8 +116,7 @@
     </footer> 
 
 
-    <script src="js/Pizza.js"></script>
-
+    <script src="./js/Pizza.js"></script> 
 
 </body>
 </html>
