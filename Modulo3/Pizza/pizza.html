@@ -7,61 +7,82 @@
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/Salsa.css">
     <link rel="shortcut icon" href="pizza.png" type="image/x-icon">
+    <style>
 
+    </style>
 </head>
 <body>
 
+    <h1>Pizzeria la Salsa de la Costa</h1>
     <form id="formulario" class="container">
         <div class="row">
-            <div class="six columns">
+            <div class="column">
                 <h3>Pizzas Disponibles</h3>
                 <!-- Tamaños de pizzas -->
-                <input type="radio" name="Pizza" id="Pizzap" value="1" onclick="seleccionarPizza()"> Pizza Pequeña<br>
-                <input type="radio" name="Pizza" id="Pizzam" value="1" onclick="seleccionarPizza()"> Pizza Mediana<br>
-                <input type="radio" name="Pizza" id="Pizzag" value="1" onclick="seleccionarPizza()"> Pizza Grande<br>
+                <input type="radio" name="Pizza" id="Pizzap" > 
+                <label for="Pizzap">Pizza Pequeña</label><br>
+                <input type="radio" name="Pizza" id="Pizzam" > 
+                <label for="Pizzam">Pizza Mediana</label><br>
+                <input type="radio" name="Pizza" id="Pizzag"> 
+                <label for="Pizzag">Pizza Grande</label><br>
+            </div>
+            
+            <div class="column checkboxes" id="checkboxes" style="display:none;">
+                <fieldset>
+                    <legend>Ingredientes Extra</legend>
+
+
+                    <div>
+                        <input type="checkbox" class="Extra" value=""> 
+                        <label>Queso Extra</label><br>
+                        <input type="checkbox" class="Extra" value=""> 
+                        <label>Champiñones</label><br>
+                        <input type="checkbox" class="Extra" value=""> 
+                        <label>Jamon</label><br>
+                        <input type="checkbox" class="Extra" value=""> 
+                        <label>Aceituna</label><br>
+                        <input type="checkbox" class="Extra" value=""> 
+                        <label>Anchoas</label><br>
+                    </div>
+               
+                    <div>
+                        <input type="checkbox" class="Extra" value=""> 
+                        <label>Atun</label><br>
+                        <input type="checkbox" class="Extra" value=""> 
+                        <label>Pepperoni</label><br>
+                        <input type="checkbox" class="Extra" value=""> 
+                        <label>Pollo</label><br>
+                        <input type="checkbox" class="Extra" value=""> 
+                        <label>Bacon</label><br>
+                        <input type="checkbox" class="Extra" value=""> 
+                        <label>Pimientos</label><br>
+                    </div>
+
+                </fieldset>
             </div>
         </div>
-    
-        <!-- ingredientes extra -->
-        <div id="checkboxes" class="row" style="display:none;">
-            <div class="six columns">
-                <h3>Ingredientes de Pizza</h3>
- 
-                <input type="checkbox" class="Extra" value="0"> Sencilla
-                <br>
-                <input type="checkbox" class="Extra" value="1"> Champiñones
-                <br>
-                <input type="checkbox" class="Extra" value="1"> Jamon
-                <br>
-                <input type="checkbox" class="Extra" value="1"> Aceituna
-                <br>
-                <input type="checkbox" class="Extra" value="1"> Anchoas
-                <br>
-                <input type="checkbox" class="Extra" value="1"> Salchichon
-                <br>
-            </div>
-        </div>
-    
-        <!-- boton de total -->
-        <button type="button" class="button-primary" onclick="total()">Calcular Coste</button>
-        <br>
-        <!-- boton de reset -->
-        <button type="reset" name="botonR">Cancelar</button>
+
+        <!-- Botón de total -->
+        <button type="button" class="button-primary">Calcular Coste</button>
+        <br><br>
+        <!-- Botón de reset -->
+        <button type="button" id="cancelarBtn" class="button-primary">Cancelar</button>
+
     </form>
-    
-    <!-- Elemento para mostrar el resultado de la suma -->
-    <p class="result container" id="resultado"></p>
-                   
+
+    <!-- Elemento para mostrar el resultado de la suma -->         
+    <p class="result" id="resultado"></p>
+    <p class="error" id="error"></p>
+
+    <footer class="row">
+        <div class="twelve columns">
+            <p>2024 Maikel Todos los derechos Reservados</p>
+        </div>
+    </footer> 
 
 
-        <!-- <footer class="row">
-            <div class="twelve columns">
-                <p>2024 Maikel Todos los derechos Reservados</p>
-            </div>
-        </footer> -->
+    <script src="js/Pizza.js"></script>
 
-        <script src="js/Pizza.js"></script>
-    </div>
-    
+
 </body>
 </html>

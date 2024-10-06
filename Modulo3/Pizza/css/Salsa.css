@@ -1,4 +1,4 @@
-
+/* 
 body {
     text-align: center; 
     font-family: 'Raleway', sans-serif;
@@ -24,4 +24,87 @@ h1 {
 
 p {
     color: #777;
+} */
+body {
+    background-color: #f9f3e9; /* Color de fondo cálido */
+    color: #333; /* Color de texto */
+    font-family: Arial, sans-serif; /* Fuente general */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    flex-direction: column; /* Dirección vertical */
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0; /* Eliminar márgenes por defecto */
+}
+
+.container {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff; /* Fondo blanco para el formulario */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 90%; /* Ancho responsivo */
+    max-width: 800px; /* Ancho máximo del formulario */
+}
+
+h1 {
+    color: #d35400; /* Color cálido para el título */
+    text-align: center;
+    margin-bottom: 20px; /* Espacio inferior para separación del formulario */
+}
+
+.button-primary {
+    background-color: #e67e22; /* Color cálido para botones */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-primary:hover {
+    background-color: #d35400; /* Color más oscuro al pasar el mouse */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se distribuyan en varias filas */
+    justify-content: space-between; /* Espaciado entre columnas */
+}
+
+.column {
+    flex-basis: calc(50% - 10px); /* Dos columnas con espacio entre ellas */
+    margin-bottom: 20px; /* Espacio inferior entre filas */
+}
+
+.checkboxes {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los checkboxes se distribuyan en varias filas */
+}
+
+.checkboxes div {
+    width: 50%; /* Dos columnas para ingredientes */
+    padding-right: 10px; /* Espaciado interno a la derecha */
+}
+
+.error {
+    color: red; /* Color rojo para mensajes de error */
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.2); /* Fondo rojo claro para errores */
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Ocultar por defecto */
+}
+
+.result {
+    background-color: #fff3e6; /* Fondo más claro que el body para el resultado */
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center; /* Centrar texto del resultado */
+    margin-top: 20px; /* Espacio superior para separación */
+    display: none; /* Ocultar por defecto */
+}
+
+footer {
+    text-align: center;
+    margin-top: auto; /* Asegurar que el footer esté al final del contenedor principal */
 }
