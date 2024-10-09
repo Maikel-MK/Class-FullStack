@@ -10,6 +10,7 @@ CREATE TABLE estudiante(
   creditos varchar(50)
   );
   
+  
   create TABLE cursa(
   	id_cursa int PRIMARY KEY,
     ciE int,
