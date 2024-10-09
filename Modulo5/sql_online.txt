@@ -1,0 +1,60 @@
+CREATE TABLE estudiante(
+  ci int PRIMARY KEY,
+  nombre varchar(50),
+  apellido varchar(50)
+  );
+  
+  CREATE TABLE materia(
+  cod int PRIMARY KEY,
+  nombre varchar(50),
+  creditos varchar(50)
+  );
+  
+  create TABLE cursa(
+  	id_cursa int PRIMARY KEY,
+    ciE int,
+    codMat int,
+    nota int,
+    sem int,
+    FOREIGN key (ciE) REFERENCES estudiante(ci),
+    FOREIGN key (codMat) REFERENCES materia(cod)
+  );
+  
+  INSERT into estudiante VALUES (1234, 'Elizabeth','Guerrero');
+  INSERT into estudiante VALUES (2345, 'Carlos','Delgado');
+  INSERT into estudiante VALUES (3456, 'Sofia','Guedez');
+  
+  SELECT ci
+  FROM estudiante
+  WHERE nombre = 'Elizabeth'
+  
+  INSERT INTO materia VALUES (1010, 'Programacion',5);
+  INSERT INTO materia VALUES (2020, 'Marketing',5);
+  INSERT INTO materia VALUES (3030, 'Biologia',5);
+  
+  SELECT * FROM materia
+  
+--Cuales estudiantes ven la materia biologia-
+SELECT cod
+FROM materia
+WHERE nombre = 'Biologia'
+
+SELECT cod
+FROM materia
+WHERE nombre = 'Marketing'
+
+--cuales estudiantes ven la materia marketing
+SELECT e.ci, e.nombre, e.apellido
+from cursa AS c, materia as m, estudiante as e
+WHERE m.cod = c.codMat and m.nombre = 'Marketing' and c.ciE = e.ci
+
+INSERT INTO cursa VALUES (1,2345,2020,15,1);
+INSERT INTO cursa VALUES (2,1234,1010,15,1);
+INSERT INTO cursa VALUES (3,3456,1010,15,1);
+INSERT INTO cursa VALUES (4,3456,3030,15,2);
+
+SELECT * FROM cursa
+
+SELECT m.nombre
+from cursa AS c, materia as m, estudiante as e
+where e.nombre = 'Elizabeth' and c.ciE = e.ci and m.cod = c.codMat
