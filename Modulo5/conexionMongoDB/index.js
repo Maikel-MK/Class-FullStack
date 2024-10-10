@@ -3,17 +3,16 @@ const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
 const port = process.env.PORT||9000;
-
 app.listen(port, ()=> console.log('server listen on port', port))
 
+//GET, POST, DELETE, UPDATE
+//CRUD = CREATE, READ, UPDATE, DELETE
 
 app.get('/',(req,res)=>{
     res.send('Bienvenido al Servidor')
 })
 
-
 //conexion a mongodb
-
 mongoose
 .connect(process.env.MONGODB_URI)
 .then(()=>console.log('Te has conectado a Mongodb'))
