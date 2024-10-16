@@ -31,6 +31,8 @@ function consultarAPI(ciudad,pais){
     const appid = '0d53411182e6bb904570600774d18dd0'
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appid}`
 
+    Spinner()
+
     fetch(url)
     .then(respuesta=>{//el status 200 quiere decir que se conecto bien y 404 que no se conecto bien
         //console.log(respuesta)
@@ -84,7 +86,7 @@ function mostrarHTML(data){
 
     const tempA = document.createElement('p')
     tempA.innerHTML = `${TA}`
-    tempA.classList.add('text-white','text-center')
+    tempA.classList.add('text-white','text-center','text-6xl')
 
     const min = document.createElement('p')
     min.innerHTML = `Temp min: ${TMm}`
@@ -104,6 +106,17 @@ function limpiarHTML(){
     while(resultado.firstChild){
         resultado.removeChild(resultado.firstChild)
     }
+}
+
+function Spinner(){
+limpiarHTML()
+
+ const divspinner = document.createElement('div')
+ divspinner.classList.add('loader')
+ divspinner.innerHTML = `
+ <span class="loader"></span>`   
+
+ resultado.appendChild(divspinner)
 }
 
 function mostrarError(mensaje){  //esto funciona para los errores
@@ -126,3 +139,4 @@ if (!alerta){//aqui se niega la falsedad asi que se vuelve true "si no lo consig
         },3000)
     }
 }
+
