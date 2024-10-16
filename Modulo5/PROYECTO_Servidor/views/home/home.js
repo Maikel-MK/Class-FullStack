@@ -3,9 +3,15 @@ const formL= document.querySelector('#form-login')
 const createInput = document.querySelector('#create-input')
 const notificacion = document.querySelector('.notification')
 
-formC.addEventListener('submit', e=>{
+formC.addEventListener('submit', async e=>{
     e.preventDefault()
 //console.log(createInput.value)
+    const respuesta = await fetch('http://localhost:3000/usuarios',{
+        method:'GET'
+    })
+    const users = respuesta.json()
+    console.log(users)
+
     if(!createInput.value){
 
         //si el campo esta vacio
