@@ -85,6 +85,7 @@ formL.addEventListener('submit', async e=>{  //el async es el que debe estar con
         },2000)
     
     }else{
+        localStorage.setItem('usuario',JSON.stringify(user))
         window.location.href = '/tareas'
     }
 
