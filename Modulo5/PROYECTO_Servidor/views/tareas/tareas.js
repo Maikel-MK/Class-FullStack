@@ -25,6 +25,7 @@ const obtenerLista = async ()=>{
         <button class="check-btn">&#10003;</button>
         </li>
         `
+        console.log(lista.text)
         listaA.appendChild(listado)
         inputF.value
     })
@@ -55,19 +56,20 @@ lista.addEventListener('click',async e =>{
        await fetch(`http://localhost:3000/tareas/${id}`,{
         method:'DELETE'})
         e.target.parentElement.remove()
-    }else if(e.target.classList.contains('check-btn'))
+    }else if(e.target.classList.contains('check-btn')){
       const id = e.target.parentElement.id
 
         const respuestaJSON = await fetch(`http://localhost:3000/tareas/${id}`,{
             method:'PATCH',
-        headers:{
-            'Content-Type':'application/json'
-        },
-        body: JSON.stringify({checked:e.target.parentElement.classList.contains('check-todo')?false:true})
-    })
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify({checked:e.target.parentElement.classList.contains('check-todo')?false:true})
+        })
 
-    const response = await respuestaJSON.json()
-    e.target.parentElement.classList.toggle('check-todo')
+        const response = await respuestaJSON.json()
+        e.target.parentElement.classList.toggle('check-todo')
+    }
 })
 
 

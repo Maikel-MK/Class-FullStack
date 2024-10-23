@@ -29,31 +29,5 @@
       "nombre": "Kitty"
     }
   ],
-  "tareas": [
-    {
-      "id": "8d62",
-      "texto": "",
-      "nombre": "Cerberos"
-    },
-    {
-      "id": "2109",
-      "texto": "Prueba",
-      "nombre": "Cerberos"
-    },
-    {
-      "id": "4e2f",
-      "texto": "Prueba",
-      "nombre": "Cerberos"
-    },
-    {
-      "id": "52a0",
-      "texto": "Prueba",
-      "nombre": "Cerberos"
-    },
-    {
-      "id": "b62a",
-      "texto": "Prueba",
-      "nombre": "Cerberos"
-    }
-  ]
+  "tareas": []
 }
