@@ -3,7 +3,7 @@
 //router: POST, GET, DELETE, UPDATE --- http
 
 const userRouter = require('express').Router()
-const User = require('../models/usuario')
+const User = require('../models/usuarios')
 
 //hacer un registro -->POST = registrar la informacion que el usuario envia a travez de la informacion del formulario
 
@@ -21,5 +21,39 @@ userRouter.post('/', (request,response)=>{
         //400 es error y 200 es correcto
    }else{
     //guardar en la BD
+    let usuario = new User()//<-- es una instancia
+      usuario.nombre = nombre
+
+      async function guardarUsiario(){
+         await usuario.save
+         
+         const listUsiarios = await User.find()
+         console.log(listUsiarios)
+      
+      
+      }
+
+      guardarUsiario().catch(console.error)
+
+      return response.status(200).json({msg:'Se ha creado el nuevo Usuario'})
+
    }
 })
+
+
+//para consultar
+userRouter.get('/consultar-user',async (req,res)=>{
+   
+})
+
+//obtener lista de usuarios
+userRouter.get('/lista-users', async (req,res)=>{
+   try{
+      const listado = await User.find()
+      return req.status(200).find({textOk:true,data:listado})
+   }catch(error){
+      return res.status(400).json({error:'Ha ocurrido un error'})
+   }
+})
+
+module.exports - userRouter

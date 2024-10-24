@@ -53,6 +53,13 @@ formC.addEventListener('submit', async e=>{
             body:JSON.stringify({nombre:createInput.value})//recordar---
         })
 
+        const newUser={//creo un nuevo objeto
+            nombre:createInput.value
+        }
+        
+        const response = await axios.post('/api/users',newUser)  //para backend lo mejor es axios porque axis tiene mayor manejo de errores
+
+
         notificacion.innerHTML = `El usuario ${createInput.value} se ha creado Satisfactoriamente`
         notificacion.classList.add('show-notification')
 
