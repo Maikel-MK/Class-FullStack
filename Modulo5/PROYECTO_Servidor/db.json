@@ -39,6 +39,12 @@
       "id": "cfde",
       "texto": "albino",
       "nombre": "Cerberos"
+    },
+    {
+      "id": "06d6",
+      "texto": "dasd",
+      "nombre": "mai",
+      "checked": false
     }
   ]
 }

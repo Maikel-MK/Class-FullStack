@@ -76,7 +76,7 @@ lista.addEventListener('click',async e =>{
 
 cerrarBTN.addEventListener('click',async e =>{
     localStorage.removeItem('usuario')
-    window.location.href='../home/index.html'
+    window.location.href='/'
 })
 
 function Limpiar(){
