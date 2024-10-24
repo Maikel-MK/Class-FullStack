@@ -3,6 +3,7 @@ const formulario = document.querySelector('#form-todos')
 const lista = document.querySelector('#todos-list')
 const inputF = document.querySelector('#form-input')
 const cerrarBTN = document.querySelector('#cerrar-btn')
+const listaA = document.querySelector('#todos-list')
 
 if(!usuario){
     //no existe, no ha iniciado sesion  "es de forma local"
@@ -12,7 +13,7 @@ if(!usuario){
 const obtenerLista = async ()=>{
     const respuesta = await fetch('http://localhost:3000/tareas',{method:'GET'})
     const list = await respuesta.json()
-    const userlist = list.filter(lista => lista.user === usuario.nombre)
+    const userlist = list.filter(lista => lista.nombre === usuario.nombre)
     console.log(userlist)
     userlist.forEach(lista=>
     {
@@ -20,19 +21,20 @@ const obtenerLista = async ()=>{
         listado.innerHTML = `
         <li id=${lista.id} class="todo-item">
         <button class="delete-btn">&#10006;</button>
-        <p class="${lista.checked ? 'check-todo' : ''}">${lista.text}</p>
+        <p class="${lista.checked ? 'check-todo' : ''}">${lista.texto}</p>
         <button class="check-btn">&#10003;</button>
         </li>
         `
-        console.log(lista.text)
-        lista.appendChild(listado)
-        inputF.value
+        console.log(lista.texto)
+        listaA.appendChild(listado)
+        inputF.value = ''
     })
 }
 obtenerLista()
 
 formulario.addEventListener('submit',async e=>{
     e.preventDefault()
+    Limpiar()
 
     const respuesta = await fetch('http://localhost:3000/tareas',{
         method:'POST',
@@ -76,3 +78,10 @@ cerrarBTN.addEventListener('click',async e =>{
     localStorage.removeItem('usuario')
     window.location.href='../home/index.html'
 })
+
+function Limpiar(){
+
+   while(listaA.firstChild){
+       lista.removeChild(listaA.firstChild)
+   }
+  }

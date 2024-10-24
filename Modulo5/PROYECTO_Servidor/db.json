@@ -31,9 +31,14 @@
   ],
   "tareas": [
     {
-      "text": "nueva tarea",
-      "user": "mai",
-      "id": "1"
+      "id": "54e9",
+      "texto": "lava",
+      "nombre": "Cerberos"
+    },
+    {
+      "id": "cfde",
+      "texto": "albino",
+      "nombre": "Cerberos"
     }
   ]
 }
