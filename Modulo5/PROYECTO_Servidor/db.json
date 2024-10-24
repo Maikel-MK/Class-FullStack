@@ -29,5 +29,11 @@
       "nombre": "Kitty"
     }
   ],
-  "tareas": []
+  "tareas": [
+    {
+      "text": "nueva tarea",
+      "user": "mai",
+      "id": "1"
+    }
+  ]
 }

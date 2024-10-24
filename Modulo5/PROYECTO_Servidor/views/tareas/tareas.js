@@ -3,7 +3,6 @@ const formulario = document.querySelector('#form-todos')
 const lista = document.querySelector('#todos-list')
 const inputF = document.querySelector('#form-input')
 const cerrarBTN = document.querySelector('#cerrar-btn')
-const listaA = document.querySelector('#todos-list')
 
 if(!usuario){
     //no existe, no ha iniciado sesion  "es de forma local"
@@ -13,7 +12,7 @@ if(!usuario){
 const obtenerLista = async ()=>{
     const respuesta = await fetch('http://localhost:3000/tareas',{method:'GET'})
     const list = await respuesta.json()
-    const userlist = list.filter(lista => lista.user === usuario.username)
+    const userlist = list.filter(lista => lista.user === usuario.nombre)
     console.log(userlist)
     userlist.forEach(lista=>
     {
@@ -26,7 +25,7 @@ const obtenerLista = async ()=>{
         </li>
         `
         console.log(lista.text)
-        listaA.appendChild(listado)
+        lista.appendChild(listado)
         inputF.value
     })
 }
